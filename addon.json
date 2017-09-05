@@ -1,0 +1,15 @@
+{
+    "name": "Unread Category Photo",
+    "description": "Allows setting a second category photo to indicate that a category contains unread comments.",
+    "version": "0.1",
+    "mobileFriendly": true,
+    "license": "GNU GPL2",
+    "key": "categoryunreadphoto",
+    "type": "addon",
+    "authors": [
+        {
+            "name": "Bleistivt",
+            "homepage": "http://bleistivt.net"
+        }
+    ]
+}
