@@ -1,22 +1,12 @@
 <?php
 
-$PluginInfo['categoryunreadphoto'] = [
-    'Name' => 'Unread Category Photo',
-    'Description' => 'Allows setting a second category photo to indicate that a category contains unread comments.',
-    'Version' => '0.1',
-    'MobileFriendly' => true,
-    'Author' => 'Bleistivt',
-    'AuthorUrl' => 'http://bleistivt.net',
-    'License' => 'GNU GPL2'
-];
-
 class CategoryUnreadPhotoPlugin extends Gdn_Plugin {
 
     public function categoriesController_render_before($sender) {
-        foreach ($sender->data('Categories', []) as $id => $category) {
+        foreach ($sender->data('CategoryTree', []) as $id => $category) {
             if (!$category['Read'] && $category['UnreadPhoto']) {
                 $sender->setData(
-                    'Categories.'.$id.'.PhotoUrl',
+                    'CategoryTree.'.$id.'.PhotoUrl',
                     Gdn_Upload::url($category['UnreadPhoto'])
                 );
             }
