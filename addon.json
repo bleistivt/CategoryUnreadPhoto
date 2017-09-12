@@ -1,7 +1,7 @@
 {
     "name": "Unread Category Photo",
     "description": "Allows setting a second category photo to indicate that a category contains unread comments.",
-    "version": "0.1",
+    "version": "0.2",
     "mobileFriendly": true,
     "license": "GNU GPL2",
     "key": "categoryunreadphoto",
