@@ -14,24 +14,19 @@ class CategoryUnreadPhotoPlugin extends Gdn_Plugin {
     }
 
 
-    public function settingsController_afterCategorySettings_handler($sender) {
-        $delete = anchor(
-            t('Delete Photo'),
+    public function vanillaSettingsController_afterCategorySettings_handler($sender) {
+        echo $sender->Form->imageUploadPreview(
+            'UnreadPhoto',
+            t('Unread Photo'),
+            '',
             'plugin/deleteunreadphoto/'
                 .$sender->Category->CategoryID.'/'
-                .Gdn::session()->transientKey(),
-            'SmallButton PopConfirm'
-        );
-        echo wrap(
-            $sender->Form->label('Unread Photo', 'UnreadPhoto')
-                .$sender->Form->imageUpload('UnreadPhoto')
-                .($sender->Form->getValue('UnreadPhoto') ? $delete : ''),
-            'li'
+                .Gdn::session()->transientKey()
         );
     }
 
 
-    public function settingsController_addEditCategory_handler($sender) {
+    public function vanillaSettingsController_addEditCategory_handler($sender) {
         if ($sender->Form->authenticatedPostBack()) {
             $upload = new Gdn_Upload();
             if ($tmp = $upload->validateUpload('UnreadPhoto_New', false)) {
