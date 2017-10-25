@@ -26,7 +26,7 @@ class CategoryUnreadPhotoPlugin extends Gdn_Plugin {
     }
 
 
-    public function vanillaSettingsController_addEditCategory_handler($sender) {
+    public function settingsController_addEditCategory_handler($sender) {
         if ($sender->Form->authenticatedPostBack()) {
             $upload = new Gdn_Upload();
             if ($tmp = $upload->validateUpload('UnreadPhoto_New', false)) {
