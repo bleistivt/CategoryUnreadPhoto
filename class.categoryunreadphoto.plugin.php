@@ -45,7 +45,7 @@ class CategoryUnreadPhotoPlugin extends Gdn_Plugin {
             (new CategoryModel())->setField($id, 'UnreadPhoto', null);
             (new Gdn_Upload())->delete($category['UnreadPhoto']);
         }
-        redirect('vanilla/settings/editcategory/'.$id);
+        redirectTo('vanilla/settings/editcategory/'.$id);
     }
 
 
