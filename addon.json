@@ -4,6 +4,7 @@
     "version": "0.2",
     "mobileFriendly": true,
     "license": "GNU GPL2",
+    "gitHub": "bleistivt/categoryunreadphoto",
     "key": "categoryunreadphoto",
     "type": "addon",
     "authors": [
