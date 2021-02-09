@@ -17,7 +17,7 @@ class CategoryUnreadPhotoPlugin extends Gdn_Plugin {
     public function vanillaSettingsController_afterCategorySettings_handler($sender) {
         echo $sender->Form->imageUploadPreview(
             'UnreadPhoto',
-            t('Unread Photo'),
+            Gdn::translate('Unread Photo'),
             '',
             'plugin/deleteunreadphoto/'
                 .$sender->Category->CategoryID.'/'
